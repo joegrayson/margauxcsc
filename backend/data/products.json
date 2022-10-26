@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Purple Delight",
+        "price": 280.00,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ratings": 5,
+        "images": [
+            {
+                "public_id": "succulents/purple_delight_P280_agkf4u",
+                "url": "https://res.cloudinary.com/dh3m4os9t/image/upload/v1654302338/succulents/purple_delight_P280_agkf4u.webp"
+            }
+        ],
+        "category": "Succulent Plants",
+        "stock": 14,
+        "numOfReviews": 32,
+        "reviews": []
+    },
+    {
+        "name": "Pachythytodies",
+        "price": 60.00,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ratings": 5,
+        "images": [
+            {
+                "public_id": "succulents/Pachythytodies_P60_psxmeq",
+                "url": "https://res.cloudinary.com/dh3m4os9t/image/upload/v1654302338/succulents/Pachythytodies_P60_psxmeq.webp"
+            }
+        ],
+        "category": "Succulent Plants",
+        "stock": 24,
+        "numOfReviews": 15,
+        "reviews": []
+    },
+    {
+        "name": "Nevada",
+        "price": 80.00,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ratings": 4,
+        "images": [
+            {
+                "public_id": "succulents/Nevada_P60_qwl9kp.webp",
+                "url": "https://res.cloudinary.com/dh3m4os9t/image/upload/v1654302337/succulents/Nevada_P60_qwl9kp.webp"
+            }
+        ],
+        "category": "Succulent Plants",
+        "stock": 15,
+        "numOfReviews": 22,
+        "reviews": []
+    },
+    {
+        "name": "Lovely Rose",
+        "price": 100.00,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ratings": 4.5,
+        "images": [
+            {
+                "public_id": "succulents/Lovely_Rose_P70_s8gvmw",
+                "url": "https://res.cloudinary.com/dh3m4os9t/image/upload/v1654302337/succulents/Lovely_Rose_P70_s8gvmw.webp"
+            }
+        ],
+        "category": "Succulent Plants",
+        "stock": 25,
+        "numOfReviews": 13,
+        "reviews": []
+    },
+    {
+        "name": "Choco Moonstone",
+        "price": 480.00,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ratings": 4,
+        "images": [
+            {
+                "public_id": "succulents/Choco_moonstone_P70_nvcdnb",
+                "url": "https://res.cloudinary.com/dh3m4os9t/image/upload/v1654302336/succulents/Choco_moonstone_P70_nvcdnb.webp"
+            }
+        ],
+        "category": "Succulent Plants",
+        "stock": 11,
+        "numOfReviews": 20,
+        "reviews": []
+    }
+]
