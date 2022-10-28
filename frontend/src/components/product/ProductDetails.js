@@ -8,6 +8,7 @@ import { useAlert } from 'react-alert'
 // import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
+import { addItemToCart } from '../../actions/cartActions'
 
 const ProductDetails = ({ match }) => {
 
@@ -30,6 +31,11 @@ const ProductDetails = ({ match }) => {
             dispatch(clearErrors())
         }
     }, [dispatch, alert, error, match.params.id])
+
+    const addToCart = () => {
+        dispatch (addItemToCart(match.params.id, quantity));
+        alert.success('Item added to your cart.')
+    }
 
     const increaseQty = () => {
         const count = document.querySelector('.count')
@@ -92,7 +98,12 @@ const ProductDetails = ({ match }) => {
                                     </div>
                                     <br />
                                     <br />
-                                    <button className="btn-56 d-inline mt-1">Add to cart</button>
+                                    <button
+                                        className="btn-56 d-inline mt-1"
+                                        disabled={product.stock === 0}
+                                        onClick={addToCart}>
+                                        Add to cart
+                                    </button>
                                     <br />
                                     <br />
                                     <p>Status:

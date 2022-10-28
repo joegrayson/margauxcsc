@@ -120,7 +120,7 @@ const Register = ({ history }) => {
                                     </figure>
                                 </div>
                                 <br/>
-                                <div className='custom-file'>
+                                <div className='custom-file mt-1 ms-4'>
                                     <input
                                         type='file'
                                         name='avatar'

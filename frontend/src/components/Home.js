@@ -61,7 +61,7 @@ const Home = ({ match }) => {
         <Fragment>
             {loading ? <Loader /> : (
                 <Fragment>
-                    <MetaData title={'bili ka halaman boi'} />
+                    <MetaData title={'Home'} />
 
                     <h1 id="products_heading">Succulent Plants</h1>
                     <section id="products" className="container mt-5">
