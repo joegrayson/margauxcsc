@@ -37,7 +37,7 @@ const Header = () => {
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
                                 <Link to="/cart" className="nav-link" style={{ textDecoration: 'none' }}>
-                                    <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <i id="my_cart" className="fa fa-shopping-cart" aria-hidden="true"></i>
                                     <span className="ml-1" id="cart_count"> {cartItems.length}</span>
                                 </Link>
                             </li>

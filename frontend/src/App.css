@@ -49,7 +49,7 @@
   left: 0;
   width: 100%;
   position: absolute;
-  top: -2px;
+  top: -1px;
   transform: translate(8px, 8px);
   transition: transform .2s ease-out;
   z-index: -1;
@@ -292,4 +292,78 @@
 
 .update-btn:hover {
   color: white;
+}
+
+/* CART [TODO: Not aligned with LOGIN button in the Header.*/
+
+#my_cart {
+  font-size: 1.3rem; 
+}
+
+.cart-item {
+  margin: 1.8rem 0rem;
+  padding: 0rem 0.7rem;
+}
+
+.cart-item a {
+  color: grey;
+}
+
+#delete_cart_item {
+  background: white;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+#card_item_price {
+  color: black;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+#checkout_btn,
+.review-btn {
+  background-color: #8DB48E;
+  border-color: #8DB48E;
+  margin-top: 2rem;
+  letter-spacing: .1rem;
+}
+
+#view_order_details {
+  background-color: #fa9c23;
+  border-color: #fa9c23;
+}
+
+#order_summary {
+  border: 2px solid #e3e3e3;
+  border-radius: 1rem;
+  padding: 3rem 1rem;
+}
+
+.order-summary-values {
+  letter-spacing: .1rem;
+}
+
+.stockCounter input {
+  border: none;
+  width: 3rem;
+  text-align: center;
+}
+
+.plus,
+.minus {
+  padding: 0.1rem 0.5rem;
+}
+
+.stockCounter input::-webkit-outer-spin-button,
+.stockCounter input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: white;
 }

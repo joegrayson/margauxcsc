@@ -101,7 +101,8 @@ const ProductDetails = ({ match }) => {
                                     <button
                                         className="btn-56 d-inline mt-1"
                                         disabled={product.stock === 0}
-                                        onClick={addToCart}>
+                                        onClick={addToCart}
+                                        style={{letterSpacing: ".1rem"}}>
                                         Add to cart
                                     </button>
                                     <br />
