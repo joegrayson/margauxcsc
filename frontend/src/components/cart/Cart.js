@@ -8,7 +8,7 @@ import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
 
-const Cart = () => {
+const Cart = ({ history }) => {
 
     const dispatch = useDispatch();
 
@@ -34,12 +34,16 @@ const Cart = () => {
         dispatch(addItemToCart(id, newQty))
     }
 
+    const checkoutHandler = () => {
+        history.push('/login?redirect=shipping')
+    }
+
     return (
         <Fragment>
             <MetaData title={'Your Cart'} />
             {cartItems.length === 0 ? <h2 className="mt-5">Your cart is empty</h2> : (
                 <Fragment>
-                    <h2 className="mt-5">Your Cart: <b>{cartItems.length} items</b></h2>
+                    <h2 className="mt-5">Your cart</h2>
 
                     {/* the edit starts here */}                    
 
@@ -51,7 +55,7 @@ const Cart = () => {
                                     <div className="cart-item" key={item.product}>
                                         <div className="row">
                                             <div className="col-4 col-lg-3">
-                                                <img src={item.image} alt="Laptop" height="115" width="115" />
+                                                <img src={item.image} alt="plant" height="115" width="115" />
                                             </div>
                                             <div className="col-6 col-lg-3 mt-4">
                                                 <Link to={`/products/${item.product}`}>{item.name}</Link>
@@ -82,13 +86,10 @@ const Cart = () => {
                             <div id="order_summary">
                                 <h3 style={{ letterSpacing: ".1rem" }}>Order summary</h3>
                                 <hr />
-                                <p>Subtotal <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} items</span></p>
-
-
-                                <span className="order-summary-values">₱765.56</span>
+                                <p style={{ letterSpacing: ".1rem", fontWeight: "bold" }}>Subtotal (<span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} items)</span></p>
+                                <span className="order-summary-values" id="items_subtotal">₱{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span>
                                 <br />
-
-                                <button id="checkout_btn" className="btn-56 btn-primary text-white">Check out</button>
+                                <button id="checkout_btn" className="btn-56 btn-primary text-white" onClick={checkoutHandler}>Check out</button>
                             </div>
                         </div>
                     </div>

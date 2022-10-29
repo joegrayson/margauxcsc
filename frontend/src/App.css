@@ -346,6 +346,11 @@
   letter-spacing: .1rem;
 }
 
+#items_subtotal {
+  letter-spacing: .1rem;
+  font-size: 25px;
+}
+
 .stockCounter input {
   border: none;
   width: 3rem;
