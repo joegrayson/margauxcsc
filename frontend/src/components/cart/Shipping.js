@@ -3,6 +3,7 @@ import { countries } from 'countries-list'
 
 import Loader from '../layouts/Loader'
 import MetaData from '../layouts/MetaData'
+import CheckoutSteps from './CheckoutSteps'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { saveShippingInfo } from '../../actions/cartActions'
@@ -32,6 +33,7 @@ const Shipping = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'Shipping Info'} />
+            <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
@@ -115,15 +117,10 @@ const Shipping = ({ history }) => {
                                 required
                             />
                         </div>
-
-
-
-
-
                         <button
                             id="shipping_btn"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="btn-56 btn-block py-3 mt-3"
                         >
                             CONTINUE
                         </button>
