@@ -1,6 +1,6 @@
 import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './components/layouts/Header';
@@ -12,6 +12,8 @@ import ProductDetails from './components/product/ProductDetails';
 
 import Cart from './components/cart/Cart';
 import Shipping from './components/cart/Shipping';
+import SuccessPayment from './components/cart/SuccessPayment';
+import FailedPayment from './components/cart/FailedPayment';
 
 import Login from './components/user/Login'
 import Register from './components/user/Register';
@@ -26,13 +28,22 @@ import ProtectedRoute from './components/route/ProtectedRoute';
 import { loadUser } from './actions/userActions';
 
 import store from './store';
+import axios from 'axios'
 
 import './App.css';
 
 function App() {
 
+  const [paymongoApiKey, setPaymongoApiKey] = useState('');
+
   useEffect(() => {
     store.dispatch(loadUser())
+
+    async function getPaymongoApiKey() {
+      const { data } = await axios.get('/api/v1/paymongoapi');
+      setPaymongoApiKey(data.paymongoApiKey)
+    }
+    getPaymongoApiKey();
   }, [])
 
   return (
@@ -46,6 +57,8 @@ function App() {
 
           <Route path="/cart" component={Cart} exact />
           <ProtectedRoute path="/shipping" component={Shipping} exact />
+          <Route path="/successpayment" component={SuccessPayment} exact />
+          <Route path="/failedpayment" component={FailedPayment} exact />
 
 
           <Route path="/login" component={Login} />

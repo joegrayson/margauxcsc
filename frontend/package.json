@@ -15,6 +15,8 @@
     "cloudinary": "^1.32.0",
     "countries-list": "^2.6.1",
     "express-fileupload": "^1.4.0",
+    "paymongo": "^1.2.2",
+    "paymongo-api-client": "^2.2.0",
     "rc-slider": "^9.6.5",
     "react": "^17.0.1",
     "react-alert": "^7.0.3",
