@@ -13,7 +13,8 @@ const ConfirmOrder = ({ history }) => {
 
     // Order prices calculations
     const itemsPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
-    // const shippingPrice = itemsPrice > 200
+    const shippingPrice = itemsPrice > 200 ? 0 : 25
+    const totalPrice = (itemsPrice + shippingPrice).toFixed(2)
 
     return (
         <Fragment>
@@ -51,12 +52,12 @@ const ConfirmOrder = ({ history }) => {
                     <div id="order_summary">
                         <h4>Order Summary</h4>
                         <hr />
-                        <p>Subtotal:  <span className="order-summary-values">$45</span></p>
-                        <p>Shipping: <span className="order-summary-values">$25</span></p>
+                        <p>Subtotal:  <span className="order-summary-values">₱{itemsPrice}</span></p>
+                        <p>Shipping: <span className="order-summary-values">₱{shippingPrice}</span></p>
 
                         <hr />
 
-                        <p>Total: <span className="order-summary-values">$123</span></p>
+                        <p>Total: <span className="order-summary-values">₱{totalPrice}</span></p>
 
                         <hr />
                         <button id="checkout_btn" className="btn btn-primary btn-block">Proceed to Payment</button>
