@@ -2,6 +2,7 @@ const catchAsyncErrors = require('../middlewares/catchAsyncErrors')
 
 // const paymongo = require('Paymongo')(process.env.PAYMONGO_SECRET_KEY);
 
+
 // Process PayMongo payments  =>  /api/v1/payment/process
 exports.processPayment = catchAsyncErrors(async (req, res, next) => {
     const paymentIntent = await paymongo.paymentIntents.create({
@@ -12,7 +13,7 @@ exports.processPayment = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        client_Secret: paymentIntent.client_Secret
+        client_secret: paymentIntent.client_secret
     })
 })
 

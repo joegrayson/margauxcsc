@@ -13,6 +13,9 @@ import ProductDetails from './components/product/ProductDetails';
 import Cart from './components/cart/Cart';
 import Shipping from './components/cart/Shipping';
 import ConfirmOrder from './components/cart/ConfirmOrder';
+import Payment from './components/cart/Payment';
+import OrderSuccess from './components/cart/OrderSuccess';
+
 import SuccessPayment from './components/cart/SuccessPayment';
 import FailedPayment from './components/cart/FailedPayment';
 
@@ -59,6 +62,11 @@ function App() {
           <Route path="/cart" component={Cart} exact />
           <ProtectedRoute path="/shipping" component={Shipping} />
           <ProtectedRoute path="/order/confirm" component={ConfirmOrder} />
+          <ProtectedRoute path="/success" component={OrderSuccess} />
+
+
+          <ProtectedRoute path="/payment" component={Payment} />
+          
           <Route path="/successpayment" component={SuccessPayment} exact />
           <Route path="/failedpayment" component={FailedPayment} exact />
 

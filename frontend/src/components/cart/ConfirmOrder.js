@@ -16,6 +16,17 @@ const ConfirmOrder = ({ history }) => {
     const shippingPrice = itemsPrice > 200 ? 0 : 25
     const totalPrice = (itemsPrice + shippingPrice).toFixed(2)
 
+    const proceedToPayment = () => {
+        const data = {
+            itemsPrice: itemsPrice.toFixed(2),
+            shippingPrice,
+            totalPrice
+        }
+
+        sessionStorage.setItem('orderInfo', JSON.stringify(data))
+        history.push('/')
+    }
+
     return (
         <Fragment>
             <MetaData title={'Confirm Order'} />
@@ -40,7 +51,7 @@ const ConfirmOrder = ({ history }) => {
                                         <Link to={`/product/${item.product}`}>{item.name}</Link>
                                     </div>
                                     <div className="col-4 col-lg-4 mt-4 mt-lg-0">
-                                        <p>{item.quantity} x ₱{item.price} = <b>₱{item.quantity * item.price}</b></p>
+                                        <p>{item.quantity} x ₱{item.price} = <b>₱{(item.quantity * item.price).toFixed(2)}</b></p>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +71,7 @@ const ConfirmOrder = ({ history }) => {
                         <p>Total: <span className="order-summary-values">₱{totalPrice}</span></p>
 
                         <hr />
-                        <button id="checkout_btn" className="btn btn-primary btn-block">Proceed to Payment</button>
+                        <button id="checkout_btn" className="btn btn-primary btn-block" onClick={proceedToPayment}>Proceed to Payment</button>
                     </div>
                 </div>
 
