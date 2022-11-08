@@ -29,6 +29,8 @@ import NewPassword from './components/user/NewPassword';
 
 import ProtectedRoute from './components/route/ProtectedRoute';
 
+import Dashboard from './components/admin/Dashboard';
+
 import { loadUser } from './actions/userActions';
 
 import store from './store';
@@ -79,10 +81,9 @@ function App() {
           <ProtectedRoute path="/me" component={Profile} exact />
           <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
           <ProtectedRoute path="/password/update" component={UpdatePassword} exact />
-          
-
 
         </div>
+        <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
         <Footer />
       </div>
     </Router>
