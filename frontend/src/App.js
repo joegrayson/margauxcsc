@@ -82,8 +82,9 @@ function App() {
           <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
           <ProtectedRoute path="/password/update" component={UpdatePassword} exact />
 
+          <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
         </div>
-        <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
+        
         <Footer />
       </div>
     </Router>
