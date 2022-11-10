@@ -30,6 +30,7 @@ import NewPassword from './components/user/NewPassword';
 import ProtectedRoute from './components/route/ProtectedRoute';
 
 import Dashboard from './components/admin/Dashboard';
+import ProductsList from './components/admin/ProductsList';
 
 import { loadUser } from './actions/userActions';
 
@@ -37,6 +38,7 @@ import store from './store';
 import axios from 'axios'
 
 import './App.css';
+
 
 function App() {
 
@@ -83,6 +85,8 @@ function App() {
           <ProtectedRoute path="/password/update" component={UpdatePassword} exact />
 
           <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
+          <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
+
         </div>
         
         <Footer />

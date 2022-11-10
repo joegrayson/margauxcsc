@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 import {
+    ADMIN_PRODUCTS_REQUEST,
+    ADMIN_PRODUCTS_SUCCESS,
+    ADMIN_PRODUCTS_FAIL,
     ALL_PRODUCTS_REQUEST,
     ALL_PRODUCTS_SUCCESS,
     ALL_PRODUCTS_FAIL,
@@ -49,6 +52,25 @@ export const getProductDetails = (id) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: PRODUCT_DETAILS_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
+
+// Getting all products [Admin]
+export const getAdminProducts = () => async (dispatch) => {
+    try {
+        dispatch({ type: ADMIN_PRODUCTS_REQUEST })
+
+        const { data } = await axios.get(`/api/v1/admin/products`)
+
+        dispatch({
+            type: ADMIN_PRODUCTS_SUCCESS,
+            payload: data.products
+        })
+    } catch (error) {
+        dispatch({
+            type: ADMIN_PRODUCTS_FAIL,
             payload: error.response.data.message
         })
     }

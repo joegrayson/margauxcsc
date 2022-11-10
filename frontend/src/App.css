@@ -524,3 +524,14 @@ ul.CTAs a {
   border-radius: 5px;
   margin-bottom: 5px;
 }
+
+/* Products List Admin */
+#products_table .btn {
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.4rem;
+}
+
+/* Dashboard */
+.card-font-size {
+  font-size: 1.5rem;
+}
