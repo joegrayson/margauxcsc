@@ -31,13 +31,17 @@ import ProtectedRoute from './components/route/ProtectedRoute';
 
 import Dashboard from './components/admin/Dashboard';
 import ProductsList from './components/admin/ProductsList';
+import NewProduct from './components/admin/NewProduct';
 
 import { loadUser } from './actions/userActions';
+
+import { useSelector } from 'react-redux'
 
 import store from './store';
 import axios from 'axios'
 
 import './App.css';
+import { userReducer } from './reducers/userReducers';
 
 
 function App() {
@@ -53,6 +57,8 @@ function App() {
     }
     getPaymongoApiKey();
   }, [])
+
+  const { user, loading } = useSelector(state => state.auth)
 
   return (
     <Router>
@@ -86,10 +92,13 @@ function App() {
 
           <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
           <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
+          <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
 
         </div>
+        {!loading && user.role !== 'admin' && (
+          <Footer />
+        )}
         
-        <Footer />
       </div>
     </Router>
   );
