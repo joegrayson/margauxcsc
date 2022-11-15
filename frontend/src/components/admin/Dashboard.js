@@ -28,6 +28,7 @@ const Dashboard = () => {
 
     return (
         <Fragment>
+            <MetaData title={'Admin Dashboard'}/>
             <div className="row">
                 <div className="col-12 col-md-2">
                     <Sidebar />
